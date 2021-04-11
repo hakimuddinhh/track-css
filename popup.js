@@ -38,8 +38,8 @@ const renderStoredData = (data) => {
 }
 
 const savedData = localStorage.getItem('track-css');
-if(offlineData && savedData) {
-    const parsedSavedData = JSON.parse(savedData);
+if(offlineData) {
+    const parsedSavedData = savedData ? JSON.parse(savedData) : null;
     const newData = {...parsedSavedData, ...offlineData};
     const newDataParsed = JSON.stringify(newData);
 
